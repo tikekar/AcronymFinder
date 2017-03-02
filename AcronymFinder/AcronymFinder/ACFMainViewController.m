@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *resultsTableView;
 @property (strong, nonatomic) NSArray *results;
 @property (strong, nonatomic) ACFShortForm *shortForm;
+@property (copy, nonatomic) NSString *emptyTableText;
 
 @end
 
@@ -26,9 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.shortForm = [[ACFShortForm alloc] init];
-    self.resultsTableView.estimatedRowHeight = 83;
+    self.resultsTableView.estimatedRowHeight = 125;
     self.resultsTableView.rowHeight = UITableViewAutomaticDimension;
-    
+    self.emptyTableText = @"Acronym search results will appear here.";
 }
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -38,7 +39,11 @@
     [self.shortForm searchLongFormsFor:searchBar.text block:^(NSArray *results, NSError *error) {
         [hud_ hide:YES];
         hud_ = nil;
+        if(results == nil || results.count == 0) {
+            self.emptyTableText = @"No Acronyms Found";
+        }
         self.results = results;
+        
         [self.resultsTableView reloadData];
     }];
     [searchBar resignFirstResponder];
@@ -49,6 +54,16 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if(self.results.count == 0) {
+        UILabel *noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height)];
+        noDataLabel.text = self.emptyTableText;
+        noDataLabel.textColor = [UIColor blackColor];
+        noDataLabel.textAlignment = NSTextAlignmentCenter;
+        tableView.backgroundView = noDataLabel;
+    }
+    else {
+        tableView.backgroundView = nil;
+    }
     return self.results.count;
 }
 
@@ -66,16 +81,6 @@
     [cell setUI:self.results[indexPath.section]];
     return cell;
 }
-
-/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    ACFLongForm *longForm_ = self.results[indexPath.section];
-    
-    CGSize textSize = [[NSString stringWithFormat:@"%@",longForm_.lf] sizeWithAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0] }];
-    return textSize.height + 120;
-    
-    
-}*/
 
 
 @end

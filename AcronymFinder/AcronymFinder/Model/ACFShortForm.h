@@ -10,7 +10,7 @@
 
 @interface ACFShortForm : NSObject
 
-@property (nonatomic, strong) NSString *sf;
+@property (nonatomic, copy) NSString *sf;
 @property (nonatomic, strong) NSMutableArray *lfs;
 
 -(void) searchLongFormsFor: (NSString *) aShortForm block:(void (^) (NSArray *results,  NSError *error))handler;

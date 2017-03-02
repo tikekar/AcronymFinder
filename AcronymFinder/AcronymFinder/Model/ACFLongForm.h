@@ -10,7 +10,7 @@
 
 @interface ACFLongForm : NSObject
 
-@property (nonatomic, strong) NSString *lf;
+@property (nonatomic, copy) NSString *lf;
 @property (nonatomic) int freq;
 @property (nonatomic) int sinceDate;
 @property (nonatomic, strong) NSDictionary *vars;

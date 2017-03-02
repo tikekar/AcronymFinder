@@ -71,9 +71,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="0Sh-Ac-Rgc" secondAttribute="trailing" constant="12" id="gKM-kp-XgD"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="top" secondItem="XWs-Ar-P8v" secondAttribute="top" constant="8" id="qSh-4J-B9D"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="longFormLabel" destination="0Sh-Ac-Rgc" id="VKk-7O-r8L"/>
                                             <outlet property="sinceYearLabel" destination="bK0-qP-pTH" id="GSK-lD-kjy"/>
