@@ -10,6 +10,7 @@
 #import "ACFShortForm.h"
 #import "ACFLongForm.h"
 #import "ACFResultTableViewCell.h"
+#import "MBProgressHUD.h"
 
 @interface ACFMainViewController ()
 
@@ -28,7 +29,12 @@
 }
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    __block MBProgressHUD *hud_ = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud_.mode = MBProgressHUDModeIndeterminate;
+    hud_.labelText = @"Finding Acronyms";
     [self.shortForm searchLongFormsFor:searchBar.text block:^(NSArray *results, NSError *error) {
+        [hud_ hide:YES];
+        hud_ = nil;
         self.results = results;
         [self.resultsTableView reloadData];
     }];
@@ -40,12 +46,12 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.results.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.results.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -54,7 +60,7 @@
     if(!cell) {
         cell = [[ACFResultTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SearchResultCell"];
     }
-    [cell setUI:self.results[indexPath.row]];
+    [cell setUI:self.results[indexPath.section]];
     return cell;
 }
 

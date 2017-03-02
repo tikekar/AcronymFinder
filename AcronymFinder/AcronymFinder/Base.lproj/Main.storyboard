@@ -24,37 +24,42 @@
                             <searchBar contentMode="redraw" placeholder="Search any acronym" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-nX-Nlb">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
                                 <color key="barTintColor" red="0.46666666670000001" green="0.81176470590000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xTT-QN-ifc"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="67" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-34-0bQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="83" sectionHeaderHeight="5" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-34-0bQ">
                                 <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="ha9-4L-6x5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="67" id="XWs-Ar-P8v" customClass="ACFResultTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="67"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="83" id="XWs-Ar-P8v" customClass="ACFResultTableViewCell">
+                                        <rect key="frame" x="0.0" y="57" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XWs-Ar-P8v" id="WCW-zG-8vh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Form Goes Here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="0Sh-Ac-Rgc">
-                                                    <rect key="frame" x="9" y="0.0" width="358" height="21"/>
+                                                    <rect key="frame" x="9" y="10" width="358" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(since year)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bK0-qP-pTH">
-                                                    <rect key="frame" x="8" y="30" width="358" height="19"/>
+                                                    <rect key="frame" x="8" y="45" width="358" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bK0-qP-pTH" firstAttribute="top" secondItem="0Sh-Ac-Rgc" secondAttribute="top" constant="30" id="30B-UP-CfM"/>
+                                                <constraint firstItem="bK0-qP-pTH" firstAttribute="top" secondItem="0Sh-Ac-Rgc" secondAttribute="top" constant="35" id="30B-UP-CfM"/>
                                                 <constraint firstItem="bK0-qP-pTH" firstAttribute="trailing" secondItem="0Sh-Ac-Rgc" secondAttribute="trailing" constant="-1" id="TqE-jJ-bGT"/>
                                                 <constraint firstItem="bK0-qP-pTH" firstAttribute="leading" secondItem="0Sh-Ac-Rgc" secondAttribute="leading" constant="-1" id="iog-0y-VwT"/>
                                             </constraints>
@@ -62,7 +67,7 @@
                                         <constraints>
                                             <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="leading" secondItem="XWs-Ar-P8v" secondAttribute="leading" constant="9" id="YmK-PY-0bN"/>
                                             <constraint firstAttribute="trailing" secondItem="0Sh-Ac-Rgc" secondAttribute="trailing" constant="8" id="ndh-60-QNZ"/>
-                                            <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="top" secondItem="XWs-Ar-P8v" secondAttribute="top" id="qSh-4J-B9D"/>
+                                            <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="top" secondItem="XWs-Ar-P8v" secondAttribute="top" constant="10" id="qSh-4J-B9D"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="longFormLabel" destination="0Sh-Ac-Rgc" id="VKk-7O-r8L"/>
