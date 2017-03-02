@@ -24,8 +24,10 @@
 
 -(void) setUI: (ACFLongForm *) aLongForm {
     self.longForm = aLongForm;
+   
     self.longFormLabel.text = aLongForm.lf;
     self.sinceYearLabel.text = [NSString stringWithFormat:@"(since %d)", aLongForm.sinceDate];
 }
+
 
 @end

@@ -25,7 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.shortForm = [[ACFShortForm alloc] init];    
+    self.shortForm = [[ACFShortForm alloc] init];
+    self.resultsTableView.estimatedRowHeight = 83;
+    self.resultsTableView.rowHeight = UITableViewAutomaticDimension;
+    
 }
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -63,5 +66,16 @@
     [cell setUI:self.results[indexPath.section]];
     return cell;
 }
+
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    ACFLongForm *longForm_ = self.results[indexPath.section];
+    
+    CGSize textSize = [[NSString stringWithFormat:@"%@",longForm_.lf] sizeWithAttributes:@{ NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:18.0] }];
+    return textSize.height + 120;
+    
+    
+}*/
+
 
 @end
