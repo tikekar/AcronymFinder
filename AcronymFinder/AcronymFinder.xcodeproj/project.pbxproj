@@ -12,13 +12,16 @@
 		8F50CF264422494145786C5F /* libPods-AcronymFinderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2694B2456D2C54DBD0E47427 /* libPods-AcronymFinderTests.a */; };
 		E7B7A3E31E689FE600F64211 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A3E21E689FE600F64211 /* main.m */; };
 		E7B7A3E61E689FE600F64211 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A3E51E689FE600F64211 /* AppDelegate.m */; };
-		E7B7A3E91E689FE600F64211 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A3E81E689FE600F64211 /* ViewController.m */; };
+		E7B7A3E91E689FE600F64211 /* ACFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A3E81E689FE600F64211 /* ACFMainViewController.m */; };
 		E7B7A3EC1E689FE600F64211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B7A3EA1E689FE600F64211 /* Main.storyboard */; };
 		E7B7A3EF1E689FE600F64211 /* AcronymFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A3ED1E689FE600F64211 /* AcronymFinder.xcdatamodeld */; };
 		E7B7A3F11E689FE600F64211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B7A3F01E689FE600F64211 /* Assets.xcassets */; };
 		E7B7A3F41E689FE600F64211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B7A3F21E689FE600F64211 /* LaunchScreen.storyboard */; };
 		E7B7A3FF1E689FE600F64211 /* AcronymFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A3FE1E689FE600F64211 /* AcronymFinderTests.m */; };
 		E7B7A40A1E689FE600F64211 /* AcronymFinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A4091E689FE600F64211 /* AcronymFinderUITests.m */; };
+		E7B7A41B1E68B13300F64211 /* ACFLongForm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A41A1E68B13300F64211 /* ACFLongForm.m */; };
+		E7B7A41E1E68B24500F64211 /* ACFShortForm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A41D1E68B24500F64211 /* ACFShortForm.m */; };
+		E7B7A4211E68C93200F64211 /* ACFResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A4201E68C93200F64211 /* ACFResultTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +53,8 @@
 		E7B7A3E21E689FE600F64211 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7B7A3E41E689FE600F64211 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7B7A3E51E689FE600F64211 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E7B7A3E71E689FE600F64211 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E7B7A3E81E689FE600F64211 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E7B7A3E71E689FE600F64211 /* ACFMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACFMainViewController.h; sourceTree = "<group>"; };
+		E7B7A3E81E689FE600F64211 /* ACFMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACFMainViewController.m; sourceTree = "<group>"; };
 		E7B7A3EB1E689FE600F64211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7B7A3EE1E689FE600F64211 /* AcronymFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcronymFinder.xcdatamodel; sourceTree = "<group>"; };
 		E7B7A3F01E689FE600F64211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +66,12 @@
 		E7B7A4051E689FE600F64211 /* AcronymFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcronymFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B7A4091E689FE600F64211 /* AcronymFinderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcronymFinderUITests.m; sourceTree = "<group>"; };
 		E7B7A40B1E689FE600F64211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7B7A4191E68B13300F64211 /* ACFLongForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACFLongForm.h; sourceTree = "<group>"; };
+		E7B7A41A1E68B13300F64211 /* ACFLongForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACFLongForm.m; sourceTree = "<group>"; };
+		E7B7A41C1E68B24500F64211 /* ACFShortForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACFShortForm.h; sourceTree = "<group>"; };
+		E7B7A41D1E68B24500F64211 /* ACFShortForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACFShortForm.m; sourceTree = "<group>"; };
+		E7B7A41F1E68C93200F64211 /* ACFResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACFResultTableViewCell.h; sourceTree = "<group>"; };
+		E7B7A4201E68C93200F64211 /* ACFResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACFResultTableViewCell.m; sourceTree = "<group>"; };
 		F02927FB0FF5CC7099B6B61D /* libPods-AcronymFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6F036BA72B22572AA4B689 /* libPods-AcronymFinderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -143,16 +152,19 @@
 		E7B7A3E01E689FE600F64211 /* AcronymFinder */ = {
 			isa = PBXGroup;
 			children = (
+				E7B7A4181E68AF7300F64211 /* Model */,
 				E7B7A3E41E689FE600F64211 /* AppDelegate.h */,
 				E7B7A3E51E689FE600F64211 /* AppDelegate.m */,
-				E7B7A3E71E689FE600F64211 /* ViewController.h */,
-				E7B7A3E81E689FE600F64211 /* ViewController.m */,
+				E7B7A3E71E689FE600F64211 /* ACFMainViewController.h */,
+				E7B7A3E81E689FE600F64211 /* ACFMainViewController.m */,
 				E7B7A3EA1E689FE600F64211 /* Main.storyboard */,
 				E7B7A3F01E689FE600F64211 /* Assets.xcassets */,
 				E7B7A3F21E689FE600F64211 /* LaunchScreen.storyboard */,
 				E7B7A3F51E689FE600F64211 /* Info.plist */,
 				E7B7A3ED1E689FE600F64211 /* AcronymFinder.xcdatamodeld */,
 				E7B7A3E11E689FE600F64211 /* Supporting Files */,
+				E7B7A41F1E68C93200F64211 /* ACFResultTableViewCell.h */,
+				E7B7A4201E68C93200F64211 /* ACFResultTableViewCell.m */,
 			);
 			path = AcronymFinder;
 			sourceTree = "<group>";
@@ -181,6 +193,17 @@
 				E7B7A40B1E689FE600F64211 /* Info.plist */,
 			);
 			path = AcronymFinderUITests;
+			sourceTree = "<group>";
+		};
+		E7B7A4181E68AF7300F64211 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7B7A4191E68B13300F64211 /* ACFLongForm.h */,
+				E7B7A41A1E68B13300F64211 /* ACFLongForm.m */,
+				E7B7A41C1E68B24500F64211 /* ACFShortForm.h */,
+				E7B7A41D1E68B24500F64211 /* ACFShortForm.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,8 +489,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7B7A3E91E689FE600F64211 /* ViewController.m in Sources */,
+				E7B7A3E91E689FE600F64211 /* ACFMainViewController.m in Sources */,
+				E7B7A4211E68C93200F64211 /* ACFResultTableViewCell.m in Sources */,
 				E7B7A3E61E689FE600F64211 /* AppDelegate.m in Sources */,
+				E7B7A41E1E68B24500F64211 /* ACFShortForm.m in Sources */,
+				E7B7A41B1E68B13300F64211 /* ACFLongForm.m in Sources */,
 				E7B7A3E31E689FE600F64211 /* main.m in Sources */,
 				E7B7A3EF1E689FE600F64211 /* AcronymFinder.xcdatamodeld in Sources */,
 			);
@@ -713,6 +739,7 @@
 				E7B7A4101E689FE600F64211 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7B7A4111E689FE600F64211 /* Build configuration list for PBXNativeTarget "AcronymFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -721,6 +748,7 @@
 				E7B7A4131E689FE600F64211 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7B7A4141E689FE600F64211 /* Build configuration list for PBXNativeTarget "AcronymFinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -729,6 +757,7 @@
 				E7B7A4161E689FE600F64211 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
