@@ -11,9 +11,12 @@
 
 @implementation ACFShortForm
 
+// search for long forms for the given string and then call the handler method when results are found.
 -(void) searchLongFormsFor: (NSString *) aShortForm block:(void (^) (NSArray *results,  NSError *error))handler {
+    
     self.sf = aShortForm;
     self.lfs = [[NSMutableArray alloc] init];
+    
     NSString *dataUrl = [NSString stringWithFormat:@"https://www.nactem.ac.uk/software/acromine/dictionary.py?sf=%@", aShortForm];
     NSURL *url = [NSURL URLWithString:dataUrl];
     
@@ -43,7 +46,6 @@
                                           }];
     
     [downloadTask resume];
-    
 }
 
 @end
