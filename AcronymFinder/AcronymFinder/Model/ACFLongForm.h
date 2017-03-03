@@ -10,9 +10,16 @@
 
 @interface ACFLongForm : NSObject
 
+//Long Form. Used the same key as json result
 @property (nonatomic, copy) NSString *lf;
+
+//freq
 @property (nonatomic) int freq;
+
+//since
 @property (nonatomic) int sinceDate;
+
+//vars as obtained from json result
 @property (nonatomic, strong) NSDictionary *vars;
 
 @end
