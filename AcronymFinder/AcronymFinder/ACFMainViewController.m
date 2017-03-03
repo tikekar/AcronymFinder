@@ -21,9 +21,6 @@
 // Stores the array of ACFLongForms for searched acronym
 @property (strong, nonatomic) NSMutableArray *results;
 
-// Instance of ACFShortForm model object. It also searches for passed string.
-@property (strong, nonatomic) ACFShortForm *shortForm;
-
 @property (copy, nonatomic) NSString *emptyTableText;
 
 @end
@@ -32,8 +29,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.shortForm = [[ACFShortForm alloc] init];
     
     // For dynamic tableview cell's height as per the longForm text size.
     self.resultsTableView.estimatedRowHeight = 125;
@@ -46,7 +41,7 @@
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(nonnull NSString *)searchText {
-    if(searchText.length > 2) {
+    if(searchText.length > 1) {
         [self doSearch:searchText];
     }
     else if(searchText.length == 0 || searchText == nil) {
@@ -74,7 +69,7 @@
     hud_.labelText = @"Finding Acronyms";
     
     // Pass the searchbar text and search long forms for that text.
-    [self.shortForm searchLongFormsFor:aStringText block:^(NSArray *results, NSError *error) {
+    [ACFShortForm searchLongFormsFor:aStringText block:^(NSArray *results, NSError *error) {
         [hud_ hide:YES];
         hud_ = nil;
         if(results == nil || results.count == 0) {
