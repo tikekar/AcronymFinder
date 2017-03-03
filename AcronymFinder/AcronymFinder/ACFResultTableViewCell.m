@@ -25,7 +25,15 @@
     self.longForm = aLongForm;
    
     self.longFormLabel.text = aLongForm.lf;
-    self.sinceYearLabel.text = aLongForm.sinceDate != -1?[NSString stringWithFormat:@"since %d", aLongForm.sinceDate]:@"";
+    NSString *labelText_ = @"";
+    if(aLongForm.freq > 0) {
+        labelText_ = [labelText_ stringByAppendingString:[NSString stringWithFormat:@"Frequency %d", aLongForm.freq]];
+    }
+    if(aLongForm.sinceDate > 0) {
+        labelText_ = [labelText_ stringByAppendingString:[NSString stringWithFormat:@", since %d", aLongForm.sinceDate]];
+    }
+
+    self.sinceYearLabel.text = labelText_;
 }
 
 
