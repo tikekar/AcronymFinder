@@ -23,7 +23,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search any acronym" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-nX-Nlb">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
-                                <color key="barTintColor" red="0.46666666670000001" green="0.81176470590000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.95686274510000002" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xTT-QN-ifc"/>
@@ -46,7 +46,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Form Goes Here." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sh-Ac-Rgc">
-                                                    <rect key="frame" x="5" y="8" width="358" height="79"/>
+                                                    <rect key="frame" x="8" y="8" width="355" height="79"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="bK0-qP-pTH" secondAttribute="bottom" constant="10.5" id="3mW-oi-zn3"/>
                                                 <constraint firstAttribute="bottom" secondItem="0Sh-Ac-Rgc" secondAttribute="bottom" constant="37.5" id="GGy-2R-Psv"/>
-                                                <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="leading" secondItem="WCW-zG-8vh" secondAttribute="leading" constant="5" id="KPl-YE-iRK"/>
+                                                <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="leading" secondItem="WCW-zG-8vh" secondAttribute="leading" constant="8" id="KPl-YE-iRK"/>
                                                 <constraint firstItem="0Sh-Ac-Rgc" firstAttribute="top" secondItem="WCW-zG-8vh" secondAttribute="top" constant="8" id="LUH-NL-9R7"/>
                                                 <constraint firstItem="bK0-qP-pTH" firstAttribute="leading" secondItem="WCW-zG-8vh" secondAttribute="leading" constant="8" id="Vt1-VE-sdh"/>
                                                 <constraint firstAttribute="trailing" secondItem="bK0-qP-pTH" secondAttribute="trailing" constant="9" id="ZV2-zI-JZS"/>

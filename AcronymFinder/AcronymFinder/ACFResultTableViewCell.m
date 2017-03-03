@@ -26,7 +26,7 @@
     self.longForm = aLongForm;
    
     self.longFormLabel.text = aLongForm.lf;
-    self.sinceYearLabel.text = [NSString stringWithFormat:@"(since %d)", aLongForm.sinceDate];
+    self.sinceYearLabel.text = aLongForm.sinceDate != -1?[NSString stringWithFormat:@"(since %d)", aLongForm.sinceDate]:@"";
 }
 
 
