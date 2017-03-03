@@ -22,6 +22,7 @@
 		E7B7A41B1E68B13300F64211 /* ACFLongForm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A41A1E68B13300F64211 /* ACFLongForm.m */; };
 		E7B7A41E1E68B24500F64211 /* ACFShortForm.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A41D1E68B24500F64211 /* ACFShortForm.m */; };
 		E7B7A4211E68C93200F64211 /* ACFResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B7A4201E68C93200F64211 /* ACFResultTableViewCell.m */; };
+		E7F0DE001E6A208A00798BE7 /* ACFVariationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F0DDFF1E6A208A00798BE7 /* ACFVariationsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		E7B7A41D1E68B24500F64211 /* ACFShortForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACFShortForm.m; sourceTree = "<group>"; };
 		E7B7A41F1E68C93200F64211 /* ACFResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACFResultTableViewCell.h; sourceTree = "<group>"; };
 		E7B7A4201E68C93200F64211 /* ACFResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACFResultTableViewCell.m; sourceTree = "<group>"; };
+		E7F0DDFE1E6A208A00798BE7 /* ACFVariationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACFVariationsTableViewController.h; sourceTree = "<group>"; };
+		E7F0DDFF1E6A208A00798BE7 /* ACFVariationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACFVariationsTableViewController.m; sourceTree = "<group>"; };
 		F02927FB0FF5CC7099B6B61D /* libPods-AcronymFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6F036BA72B22572AA4B689 /* libPods-AcronymFinderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AcronymFinderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -165,6 +168,8 @@
 				E7B7A3E11E689FE600F64211 /* Supporting Files */,
 				E7B7A41F1E68C93200F64211 /* ACFResultTableViewCell.h */,
 				E7B7A4201E68C93200F64211 /* ACFResultTableViewCell.m */,
+				E7F0DDFE1E6A208A00798BE7 /* ACFVariationsTableViewController.h */,
+				E7F0DDFF1E6A208A00798BE7 /* ACFVariationsTableViewController.m */,
 			);
 			path = AcronymFinder;
 			sourceTree = "<group>";
@@ -495,6 +500,7 @@
 				E7B7A41E1E68B24500F64211 /* ACFShortForm.m in Sources */,
 				E7B7A41B1E68B13300F64211 /* ACFLongForm.m in Sources */,
 				E7B7A3E31E689FE600F64211 /* main.m in Sources */,
+				E7F0DE001E6A208A00798BE7 /* ACFVariationsTableViewController.m in Sources */,
 				E7B7A3EF1E689FE600F64211 /* AcronymFinder.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

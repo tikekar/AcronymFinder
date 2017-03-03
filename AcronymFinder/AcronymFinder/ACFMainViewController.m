@@ -11,6 +11,7 @@
 #import "ACFLongForm.h"
 #import "ACFResultTableViewCell.h"
 #import "MBProgressHUD.h"
+#import "ACFVariationsTableViewController.h"
 
 @interface ACFMainViewController ()
 
@@ -35,8 +36,8 @@
     self.resultsTableView.rowHeight = UITableViewAutomaticDimension;
     self.emptyTableText = @"Acronym search results will appear here.";
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTableViewTap)];
-    [self.resultsTableView addGestureRecognizer:tap];
+    //UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTableViewTap)];
+    //[self.resultsTableView addGestureRecognizer:tap];
     
     self.resultsTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
@@ -117,6 +118,22 @@
     [cell setUI:self.results[indexPath.row]];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"Show Variations" sender:self.results[indexPath.row]];
+}
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+     if ([segue.identifier isEqualToString:@"Show Variations"]) {
+         ACFVariationsTableViewController *vc_ = segue.destinationViewController;
+         vc_.longForm = (ACFLongForm *)sender;
+     }
+ }
 
 
 @end

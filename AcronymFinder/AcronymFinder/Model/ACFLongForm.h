@@ -20,6 +20,8 @@
 @property (nonatomic) int sinceDate;
 
 //vars as obtained from json result
-@property (nonatomic, strong) NSDictionary *vars;
+@property (nonatomic, strong) NSMutableArray *vars;
+
+-(void) setDetails: (NSDictionary *) aDictionary;
 
 @end

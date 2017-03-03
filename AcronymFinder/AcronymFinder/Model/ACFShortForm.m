@@ -63,10 +63,7 @@ static NSString * const KClass_AcronymResults = @"AcronymResults";
         for(int i=0; i<lfs_.count; i++) {
             NSDictionary *iLF_ = lfs_[i];
             ACFLongForm *lf_ = [[ACFLongForm alloc] init];
-            lf_.lf = [iLF_ objectForKey:@"lf"];
-            lf_.sinceDate = [iLF_ objectForKey:@"since"] != nil?[[iLF_ objectForKey:@"since"] intValue]:-1;
-            lf_.freq = [iLF_ objectForKey:@"freq"] != nil?[[iLF_ objectForKey:@"freq"] intValue]:-1;
-            lf_.vars = [iLF_ objectForKey:@"vars"];
+            [lf_ setDetails:iLF_];
             [self.lfs addObject:lf_];
         }
     }

@@ -13,7 +13,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,7 +25,7 @@
     self.longForm = aLongForm;
    
     self.longFormLabel.text = aLongForm.lf;
-    self.sinceYearLabel.text = aLongForm.sinceDate != -1?[NSString stringWithFormat:@"(since %d)", aLongForm.sinceDate]:@"";
+    self.sinceYearLabel.text = aLongForm.sinceDate != -1?[NSString stringWithFormat:@"since %d", aLongForm.sinceDate]:@"";
 }
 
 

@@ -98,11 +98,70 @@
                     <connections>
                         <outlet property="resultsTableView" destination="sZP-34-0bQ" id="6GD-ej-hZR"/>
                         <outlet property="searchBar" destination="tE2-nX-Nlb" id="K7c-ZR-I4M"/>
+                        <segue destination="Utz-1b-plY" kind="show" identifier="Show Variations" id="tz7-Lv-4Lq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845.60000000000002" y="-431.33433283358323"/>
+        </scene>
+        <!--Variations Table View Controller-->
+        <scene sceneID="yyn-7q-0kV">
+            <objects>
+                <tableViewController id="Utz-1b-plY" customClass="ACFVariationsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uan-07-7N1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="125" id="O8Z-dK-y18" customClass="ACFResultTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="125"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O8Z-dK-y18" id="fSl-g5-cG1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Form Goes Here." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhY-fY-hEL">
+                                            <rect key="frame" x="8" y="8" width="355" height="79"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(since year)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-Dl-0t1">
+                                            <rect key="frame" x="8" y="95" width="358" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="3kt-J3-cnW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BhY-fY-hEL" firstAttribute="top" secondItem="fSl-g5-cG1" secondAttribute="top" constant="8" id="1b9-FK-cs9"/>
+                                        <constraint firstAttribute="trailing" secondItem="BhY-fY-hEL" secondAttribute="trailing" constant="12" id="CN4-gM-Vys"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eol-Dl-0t1" secondAttribute="trailing" constant="9" id="EUo-mj-wgh"/>
+                                        <constraint firstItem="BhY-fY-hEL" firstAttribute="leading" secondItem="fSl-g5-cG1" secondAttribute="leading" constant="8" id="LUs-vl-0WY"/>
+                                        <constraint firstAttribute="bottom" secondItem="BhY-fY-hEL" secondAttribute="bottom" constant="37.5" id="NjB-BU-v2S"/>
+                                        <constraint firstItem="Eol-Dl-0t1" firstAttribute="leading" secondItem="fSl-g5-cG1" secondAttribute="leading" constant="8" id="UJm-17-wxr"/>
+                                        <constraint firstAttribute="bottom" secondItem="Eol-Dl-0t1" secondAttribute="bottom" constant="10.5" id="vpO-3Q-CzU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="longFormLabel" destination="BhY-fY-hEL" id="XpR-E4-Ir2"/>
+                                    <outlet property="sinceYearLabel" destination="Eol-Dl-0t1" id="pXk-yt-JGL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Utz-1b-plY" id="3zm-5x-iLs"/>
+                            <outlet property="delegate" destination="Utz-1b-plY" id="qL4-C8-vXl"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcD-3x-RBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527" y="-429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r9z-ZY-yz7">
