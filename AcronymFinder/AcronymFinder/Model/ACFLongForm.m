@@ -12,7 +12,7 @@
 
 -(void) setDetails: (NSDictionary *) aDictionary {
     self.vars = [[NSMutableArray alloc] init];
-    self.lf = [aDictionary objectForKey:@"lf"];
+    self.longForm = [aDictionary objectForKey:@"lf"];
     self.sinceDate = [aDictionary objectForKey:@"since"] != nil?[[aDictionary objectForKey:@"since"] intValue]:-1;
     self.freq = [aDictionary objectForKey:@"freq"] != nil?[[aDictionary objectForKey:@"freq"] intValue]:-1;
     NSArray *vars_ = [aDictionary objectForKey:@"vars"];

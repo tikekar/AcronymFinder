@@ -10,8 +10,8 @@
 
 @interface ACFLongForm : NSObject
 
-//Long Form. Used the same key as json result
-@property (nonatomic, copy) NSString *lf;
+//Long Form.
+@property (nonatomic, copy) NSString *longForm;
 
 //freq
 @property (nonatomic) int freq;

@@ -24,7 +24,7 @@
 -(void) setUI: (ACFLongForm *) aLongForm {
     self.longForm = aLongForm;
    
-    self.longFormLabel.text = aLongForm.lf;
+    self.longFormLabel.text = aLongForm.longForm;
     NSString *labelText_ = @"";
     if(aLongForm.freq > 0) {
         labelText_ = [labelText_ stringByAppendingString:[NSString stringWithFormat:@"Frequency %d", aLongForm.freq]];

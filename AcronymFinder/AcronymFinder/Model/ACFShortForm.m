@@ -19,15 +19,15 @@ static NSString * const KClass_AcronymResults = @"AcronymResults";
 +(void) searchLongFormsFor: (NSString *) aShortForm block:(void (^) (NSArray *results,  NSError *error))handler {
     
     ACFShortForm *shortForm_ = [[ACFShortForm alloc] init];
-    shortForm_.sf = aShortForm;
-    shortForm_.lfs = [[NSMutableArray alloc] init];
+    shortForm_.shortForm = aShortForm;
+    shortForm_.longForms = [[NSMutableArray alloc] init];
     
     // Get Results from local (Core Data)
     NSArray *array_ = [shortForm_ getResultsFromCoreData];
     if(array_ != nil) {
         [shortForm_ createLongFormArray:array_];
         dispatch_async(dispatch_get_main_queue(), ^{
-            handler(shortForm_.lfs, nil);
+            handler(shortForm_.longForms, nil);
         });
         
         return;
@@ -48,7 +48,7 @@ static NSString * const KClass_AcronymResults = @"AcronymResults";
                                               }
                                               // Call the block handler on main thread.
                                               dispatch_async(dispatch_get_main_queue(), ^{
-                                                  handler(shortForm_.lfs, error);
+                                                  handler(shortForm_.longForms, error);
                                               });
                                               
                                           }];
@@ -64,7 +64,7 @@ static NSString * const KClass_AcronymResults = @"AcronymResults";
             NSDictionary *iLF_ = lfs_[i];
             ACFLongForm *lf_ = [[ACFLongForm alloc] init];
             [lf_ setDetails:iLF_];
-            [self.lfs addObject:lf_];
+            [self.longForms addObject:lf_];
         }
     }
 }
@@ -84,7 +84,7 @@ static NSString * const KClass_AcronymResults = @"AcronymResults";
         [results_ setValue:jsonString forKey:@"results"];
         
         [results_ setValue:[NSDate date] forKey:@"createdAt"];
-        [results_ setValue:self.sf forKey:@"shortForm"];
+        [results_ setValue:self.shortForm forKey:@"shortForm"];
         
         [delegate_ saveContext];
     }
@@ -92,7 +92,7 @@ static NSString * const KClass_AcronymResults = @"AcronymResults";
 
 // Get Results from Core data AcronymResults entity for given shortForm (sf)
 -(NSArray *) getResultsFromCoreData {
-    NSString *shortForm_ = self.sf;
+    NSString *shortForm_ = self.shortForm;
     if(shortForm_ == nil) return nil;
     AppDelegate *delegate_ = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSEntityDescription *description_ = [NSEntityDescription entityForName:KClass_AcronymResults inManagedObjectContext:delegate_.persistentContainer.viewContext];
