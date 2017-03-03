@@ -17,7 +17,7 @@
     self.sf = aShortForm;
     self.lfs = [[NSMutableArray alloc] init];
     
-    NSString *dataUrl = [NSString stringWithFormat:@"https://www.nactem.ac.uk/software/acromine/dictionary.py?sf=%@", aShortForm];
+    NSString *dataUrl = [NSString stringWithFormat:@"http://www.nactem.ac.uk/software/acromine/dictionary.py?sf=%@", aShortForm];
     NSURL *url = [NSURL URLWithString:dataUrl];
     
     NSURLSessionDataTask *downloadTask = [[NSURLSession sharedSession]

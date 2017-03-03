@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *resultsTableView;
 
 // Stores the array of ACFLongForms for searched acronym
-@property (strong, nonatomic) NSArray *results;
+@property (strong, nonatomic) NSMutableArray *results;
 
 // Instance of ACFShortForm model object. It also searches for passed string.
 @property (strong, nonatomic) ACFShortForm *shortForm;
@@ -38,29 +38,52 @@
     // For dynamic tableview cell's height as per the longForm text size.
     self.resultsTableView.estimatedRowHeight = 125;
     self.resultsTableView.rowHeight = UITableViewAutomaticDimension;
-    
     self.emptyTableText = @"Acronym search results will appear here.";
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTableViewTap)];
+    
+    [self.resultsTableView addGestureRecognizer:tap];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(nonnull NSString *)searchText {
+    if(searchText.length > 2) {
+        [self doSearch:searchText];
+    }
+    else if(searchText.length == 0 || searchText == nil) {
+        self.emptyTableText = @"Acronym search results will appear here.";
+        [self.results removeAllObjects];
+        [self.resultsTableView reloadData];
+    }
+    
+}
+
+-(void) onTableViewTap {
+    [self.searchBar resignFirstResponder];
 }
 
 // When searchBar search button clicked.
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     
+    [self doSearch:searchBar.text];
+    [searchBar resignFirstResponder];
+}
+
+-(void) doSearch:(NSString *) aStringText {
     __block MBProgressHUD *hud_ = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud_.mode = MBProgressHUDModeIndeterminate;
     hud_.labelText = @"Finding Acronyms";
     
     // Pass the searchbar text and search long forms for that text.
-    [self.shortForm searchLongFormsFor:searchBar.text block:^(NSArray *results, NSError *error) {
+    [self.shortForm searchLongFormsFor:aStringText block:^(NSArray *results, NSError *error) {
         [hud_ hide:YES];
         hud_ = nil;
         if(results == nil || results.count == 0) {
             self.emptyTableText = @"No Acronyms Found";
         }
-        self.results = results;
-        
+        self.results = [results mutableCopy];
+    
         [self.resultsTableView reloadData];
     }];
-    [searchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
