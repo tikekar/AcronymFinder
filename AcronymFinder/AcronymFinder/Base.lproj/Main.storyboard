@@ -23,13 +23,13 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search any acronym" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-nX-Nlb">
                                 <rect key="frame" x="0.0" y="65" width="375" height="44"/>
-                                <color key="barTintColor" red="0.46666666670000001" green="0.81176470590000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xTT-QN-ifc"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="125" sectionHeaderHeight="5" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-34-0bQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="125" sectionHeaderHeight="2" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-34-0bQ">
                                 <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ha9-4L-6x5">

@@ -36,8 +36,10 @@
     self.emptyTableText = @"Acronym search results will appear here.";
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTableViewTap)];
-    
     [self.resultsTableView addGestureRecognizer:tap];
+    
+    self.resultsTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(nonnull NSString *)searchText {
@@ -98,12 +100,12 @@
     else {
         tableView.backgroundView = nil;
     }
-    return self.results.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.results.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +114,7 @@
     if(!cell) {
         cell = [[ACFResultTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SearchResultCell"];
     }
-    [cell setUI:self.results[indexPath.section]];
+    [cell setUI:self.results[indexPath.row]];
     return cell;
 }
 
