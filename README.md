@@ -19,3 +19,12 @@ Find the meanings of given acronym
 1. Open the AcronymFinder.xcworkspace as I have used cocoapods.
 2. Run AcronymFinder
 3. Search for any acronym.
+
+## Screens
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3718.png" alt="Drawing" width="200px"/>
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3719.png" alt="Drawing" width="200px"/>
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3720.png" alt="Drawing" width="200px"/>
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3721.png" alt="Drawing" width="200px"/>
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3722.png" alt="Drawing" width="200px"/>
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3723.png" alt="Drawing" width="200px"/>
+<img src="https://github.com/tikekar/AcronymFinder/blob/master/screenshots/IMG_3724.png" alt="Drawing" width="200px"/>
