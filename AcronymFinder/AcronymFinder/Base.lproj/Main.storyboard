@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Acronym Finder-->
+        <!--Acronyms-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ACFMainViewController" sceneMemberID="viewController">
@@ -94,7 +94,7 @@
                             <constraint firstAttribute="trailing" secondItem="tE2-nX-Nlb" secondAttribute="trailing" id="z22-Iw-Xo8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Acronym Finder" id="HJ7-Rb-Cfx"/>
+                    <navigationItem key="navigationItem" title="Acronyms" id="HJ7-Rb-Cfx"/>
                     <connections>
                         <outlet property="resultsTableView" destination="sZP-34-0bQ" id="6GD-ej-hZR"/>
                         <outlet property="searchBar" destination="tE2-nX-Nlb" id="K7c-ZR-I4M"/>
