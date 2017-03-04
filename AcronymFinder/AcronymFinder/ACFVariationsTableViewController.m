@@ -21,8 +21,6 @@
     [super viewDidLoad];
     self.tableView.estimatedRowHeight = 125;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.navigationItem.title = @"Variations";
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated {

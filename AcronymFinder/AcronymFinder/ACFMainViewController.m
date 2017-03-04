@@ -22,6 +22,7 @@
 // Stores the array of ACFLongForms for searched acronym
 @property (strong, nonatomic) NSMutableArray *results;
 
+// When no results found, show this message to the user.
 @property (copy, nonatomic) NSString *emptyTableText;
 
 @end
@@ -35,9 +36,6 @@
     self.resultsTableView.estimatedRowHeight = 125;
     self.resultsTableView.rowHeight = UITableViewAutomaticDimension;
     self.emptyTableText = @"Acronym search results will appear here.";
-    
-    //UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTableViewTap)];
-    //[self.resultsTableView addGestureRecognizer:tap];
     
     self.resultsTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
@@ -75,7 +73,10 @@
     [ACFShortForm searchLongFormsFor:aStringText block:^(NSArray *results, NSError *error) {
         [hud_ hide:YES];
         hud_ = nil;
-        if(results == nil || results.count == 0) {
+        if(error != nil && error.localizedDescription != nil) {
+            self.emptyTableText = error.localizedDescription;
+        }
+        else if(results == nil || results.count == 0) {
             self.emptyTableText = @"No Acronyms Found";
         }
         self.results = [results mutableCopy];
@@ -134,6 +135,5 @@
          vc_.longForm = (ACFLongForm *)sender;
      }
  }
-
 
 @end
